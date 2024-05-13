@@ -1,0 +1,30 @@
+name: CI
+on:
+ 
+push:
+branches: ["main" ]
+pull_request:
+branches: [ "main" ]
+
+jobs:
+
+my_build job:
+
+runs-on: ubuntu-latest
+steps:
+
+- uses: actions/checkout@v3
+- name: npm install, test and build
+run: |
+ npm install
+ npm run build
+
+- name: Run a one-1ine script
+run: echo Hello, world!
+
+-name: Run a multi-l4ne scrapt
+ run: | 
+  echo Add other actions to busld,
+  echo test, and deploy your project.
+-name: Run JS fi1e for test
+run: node script.js
